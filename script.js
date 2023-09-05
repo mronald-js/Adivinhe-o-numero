@@ -25,6 +25,8 @@ guessButton.addEventListener('click', () => {
     // Gera o valor alvo;
     target = generateTarget();
 
+    if(!(isTheRangeValid(humanGuessInput.value))) return;
+
     //atribui o 'valor' do input da variavel do humanGuessInput
     const currentHumanGuess = humanGuessInput.value;
     const computerGuess = Math.floor(Math.random() * 10);
@@ -49,8 +51,7 @@ guessButton.addEventListener('click', () => {
     } else {
       computerWinsDisplay.innerText = 'O Computador Ganhou!!!';
     }
-  
-  
+    
     // Mostra a pontuação atual:
     humanScoreDisplay.innerText = humanScore;
     computerScoreDisplay.innerText = computerScore;
@@ -130,7 +131,10 @@ function compareGuesses(userGuess, computerGuess, secretTarget) {
 }
 
 function isTheRangeValid(input){
-    if (input < 0 || input > 9) alert('Numero invalido!');
+    if (input < 0 || input > 9){
+        alert('Numero invalido!');
+        return false;
+    } else return true;
 }
 
 function updateScore(whoWon){
@@ -145,4 +149,3 @@ function advanceRound() {
 humanGuessInput.addEventListener('input', function(e) {
     handleValueChange(e.target.value);
 });
-  
