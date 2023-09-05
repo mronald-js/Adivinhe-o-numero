@@ -1,0 +1,69 @@
+<!doctype html>
+
+<html>
+  <head>
+    <title>Adivinhe o número</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div class="game-container">
+      <header>
+        <h1>Adivinhe o Número!</h1>
+      </header>
+      
+      <div class="rounds">
+        <p class="round-label">Round <span id="round-number">1</span></p>
+        <p class="guess-label">Número alvo: <span id="target-number">?</span></p>
+      </div>
+
+      <div class="guessing-area">
+        <div class="guess computer-guess">
+          <div class="guess-title">
+            <p class="guess-label">Computador</p>
+            <p class="score-label">Pontuação: <span id="computer-score">0</span></p>
+          </div>
+          <p id="computer-guess">?</p>
+          <p class="winning-text" id="computer-wins"></p>
+        </div>
+        <div class="guess human-guess">
+          <div class="guess-title">
+            <p class="guess-label">You</p>
+            <p class="score-label">Pontuação: <span id="human-score">0</span></p>
+          </div>
+          <input type="number" id="human-guess" min=0 max=9 value=0>
+          <div class="number-controls">
+            <button class="number-control left" id="subtract" disabled>-</button>
+            <button class="number-control right" id="add">+</button>
+          </div>
+          <button class="button" id="guess">Tentar adivinhar</button>
+        </div>
+      </div>
+
+      <div class="next-round-container">
+        <button class="button" id="next-round" disabled>Próximo Round</button>
+      </div>
+
+    </div>
+    
+    <div class="instructions">
+      <div class="instruction">
+        <h3>Passo 1</h3>
+        <p>Entre com um número entre 0 e 9</p>
+      </div>
+      <div class="instruction">
+        <h3>Passo 2</h3>
+        <p>
+          Clique em "Tentar adivinhar" para enviar sua tentativa e veja quem ganha o round
+          (Não ganha necessariamente quem adivinha o valor 100% correto, mas quem chega mais perto).
+        </p>
+      </div>
+      <div class="instruction">
+        <h3>Passo 3</h3>
+        <p>Clique em "Próximo passo" para jogar novamente.</p>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
