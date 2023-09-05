@@ -1,4 +1,4 @@
-# Adivinhe o numero!
+# Adivinhe o numero!/Guess the number
 
 ## Repositório para fins de portfolio (sujeito a alterações)
 
